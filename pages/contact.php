@@ -1,4 +1,14 @@
-<?php include('../includes/head.php'); ?>
+<?php include('../includes/head.php'); 
+    if (isset($_GET)){
+        $name = $_GET['name'];
+        var_dump($name); //
+        $message = $_GET['message'];
+        var_dump($message); // 
+    }
+
+
+
+?>
 
 <div class="container">
     <form method="GET">
