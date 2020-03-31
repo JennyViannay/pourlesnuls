@@ -1,5 +1,11 @@
-<?php include('../includes/head.php'); 
- 
+<?php 
+session_start();
+include('../includes/head.php'); 
+
+if($_SESSION['isConnected'] == false){
+    header('Location: http://localhost:8000');
+}
+
     $articles = [
         "1" => [
             "title" => "Mon premiers article",

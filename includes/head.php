@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -18,15 +18,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <?php if(empty($_SESSION)){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/login.php">Login</a>
                     </li>
+                    <?php } ?>   
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/contact.php">Contact</a>
                     </li>
+                    <?php if(!empty($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/articles.php">Articles</a>
                     </li>
+                    <form action="../index.php" method="GET">
+                        <button class="btn btn-primary" type="submit" name="logout">LOGOUT</button>
+                    </form>
+                    <?php }?>
                 </ul>
             </div>
         </nav>

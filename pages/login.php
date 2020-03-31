@@ -1,16 +1,10 @@
-
 <?php 
-
-    include('../includes/head.php'); 
-    if(isset($_POST)){
-        if(!empty($_POST['email'] && !empty($_POST['password']))){
-            $email = $_POST['email'];
-            // redirection vers la page articles.php 
-            header('Location: http://localhost:8000/pages/articles.php');
-        } else {
-            // stocker une erreur "Les champs email et password sont obligatoires."
-            $errors = "Les champs email et password sont obligatoires.";
-        }
+    session_start();
+    include('../includes/head.php');
+    include('../controller.php'); 
+    
+    if(isset($_POST['submit'])){
+        getAutentification($_POST);
     }
 ?>
 
